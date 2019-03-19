@@ -23,15 +23,12 @@ module.exports = {
 
 
       // TIP:DefaultAttributes: This is where you can change the default attributes for players
-      const defaultAttributes = [];
+      const defaultAttributes = [
+        'health',
+      ];
 
-      if (!defaultAttributes.length) {
-        Logger.error(`No default attributes defined. See https://ranviermud.com/coding/attributes/ for the guide then update ${__filename} to set defaults to remove this error message.`);
-        process.exit(0);
-      }
-
-      for (const [attr, value] in defaultAttributes) {
-        player.addAttribute(state.AttributeFactory.create(attr, defaultAttributes[attr]));
+      for (const attr of defaultAttributes) {
+        player.addAttribute(state.AttributeFactory.create(attr));
       }
 
       args.account.addCharacter(args.name);

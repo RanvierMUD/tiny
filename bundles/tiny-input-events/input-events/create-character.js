@@ -38,6 +38,7 @@ module.exports = {
           return socket.emit('create-player', socket, args);
         }
 
+        args.name = name;
         socket.emit('finish-character', socket, args);
       });
     });

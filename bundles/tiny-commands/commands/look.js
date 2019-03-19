@@ -2,7 +2,7 @@
 const { Broadcast: B, Item, Logger, Player } = require('ranvier');
 
 module.exports = {
-  command: state => function (args, player) => {
+  command: state => function (args, player) {
     if (!player.room) {
       Logger.error(player.getName() + ' is in limbo.');
       return B.sayAt(player, 'You are in a deep, dark void.');
@@ -16,7 +16,7 @@ module.exports = {
 
     for (const otherPlayer of room.players) {
       if (otherPlayer === player) {
-        return;
+        continue;
       }
 
       B.sayAt(player, `[Player] ${otherPlayer.name}`);

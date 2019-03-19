@@ -19,7 +19,7 @@ module.exports = {
       return false;
     }
 
-    write("Enter your password: ");
+    socket.write("Enter your password: ");
     socket.command("toggleEcho");
 
     socket.once("data", pass => {
@@ -40,6 +40,7 @@ module.exports = {
         return socket.emit("create-character", socket, args);
       }
 
+      socket.write("\r\nWelcome back!\r\n");
       socket.emit("account-menu", socket, args);
     });
   }

@@ -3,7 +3,10 @@
   "bundles": [
     "telnet-networking",
     "tiny-input-events",
-    "tiny-areas"
+    "tiny-areas",
+    "tiny-commands",
+    "tiny-player-events",
+    "tiny-attributes"
   ],
   "dataSources": {
     "YamlArea": {
