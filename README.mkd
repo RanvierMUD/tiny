@@ -1,40 +1,15 @@
-<p align="center"><img class="readme-logo" src="https://raw.githubusercontent.com/RanvierMUD/docs/master/resources/logo.png"></p>
+RanvierMUD Tiny is a barebones starter kit for people who "know what they're doing" and just want to have a telnet
+connection, login, command parsing, and movement. There is almost nothing here which may be preferable for those that
+know what they want and don't want to spend time tearing everything down before they can build it back up.
 
-# ranvier
+This setup includes account creation, multiplayer players per account, a _very_ basic command parser that understands
+room exits and _exact_ command entry.  That is to say the player needs to type 'look' if they want to look, not 'l'.
+This gives you freedom to do whatever kind of handling you want without any code to tear down.
 
-## Node.js-based MUD engine
+There are exactly 2 commands included: look and quit and there is one starter area with 3 rooms to demonstrate that
+movement actually works.
 
-Ranvier is a [MUD](https://en.wikipedia.org/wiki/MUD) game engine whose goal is to be a simple but powerful way to build whatever MUD you want with special care given to extensibility. The core code strives to be completely unopinionated toward any specific style of game while using the bundle system to build the game you want without having to dig through the engine's code.
-
-## Special Features
-
-* Robust bundle system: Nearly every aspect of the game can be modified without changing the core and allows for easy
-  packaging and sharing of commands/areas/items/npcs/channels/behaviors
-* Unopinionated network layer: easily swap out telnet for any network layer you like. No need to gut the whole codebase
-  just to support a different transport type, just drop in a file.
-* Customizable data layer: You are not tied to saving in any particular database or file storage sytem
-* Optional coordinate based room system allowing for the flexibilty of a standard MUD world with the easy mappability of
-  a strict 3D world.
-* Scripting for all entities in the game for any event along with behaviors to create shared, composable scripts
-* Skill system with passive/active skills
-* Effects e.g., buffs/debuffs
-* Quest system allowing for starting/progress/completion from any event in the game
-* Communication channels with custom audiences
-
-## Documentation
-
-Ranvier prides itself on having thorough documentation which is available on our website: [ranviermud.com](https://ranviermud.com)
-
-## Slack
-
-We have a Slack channel you can use to ask questions, suggest features, or just keep up to date with the project: [https://ranviermud.slack.com](https://ranviermud.slack.com)
-
-[Get an invite](https://join.slack.com/t/ranviermud/shared_invite/enQtMzczMDU3MDkxODc5LWVjZmUwNjBmNGFjYjZjOTM2OTcyMDMzZTJjZmNlOWZjNWJmNjVmMTg4ODFmOWQ3Yjg2Y2U5OTIyYTgyZTE2ZTA)
-
-## Requirements
-
-* [Node.js](https://nodejs.org) >= v10.12.0
-
-## Demo
-
-Point your favorite client or telnet to `ranviermud.com` port 4000. This demo server is wiped and updated from the `master` branch every hour.
+The basic command parser does not support skills or channels, if you're using this bundle you know what you're doing and
+can decide how you want those to be parsed.  The input events for the login/character creation flow are nearly identical
+to bundle-example-input-events but pared down to the bare minimum. There are no character classes. There is only one
+default attribute: health.
