@@ -1,6 +1,9 @@
 {
   "port": 4000,
   "bundles": [
+    "telnet-networking",
+    "tiny-input-events",
+    "tiny-areas"
   ],
   "dataSources": {
     "YamlArea": {
@@ -72,7 +75,7 @@
   "minPlayerNameLength": 3,
   "maxCharacters": 3,
   "reportToAdmins": false,
-  "startingRoom": "limbo:white",
+  "startingRoom": "tiny:start",
   "moveCommand": "move",
   "skillLag": 2000,
   "defaultMaxPlayerInventory": 16,
