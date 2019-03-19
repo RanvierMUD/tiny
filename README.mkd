@@ -13,3 +13,12 @@ The basic command parser does not support skills or channels, if you're using th
 can decide how you want those to be parsed.  The input events for the login/character creation flow are nearly identical
 to bundle-example-input-events but pared down to the bare minimum. There are no character classes. There is only one
 default attribute: health.
+
+### Installation
+
+```
+git clone --recursive https://github.com/ranviermud/tiny
+cd tiny
+npm install
+git submodule foreach npm install
+```
